@@ -18,8 +18,6 @@ class spect_config():
         self.dropout_1_1 = parameters.dropout1_1
         self.dropout_1_2 = parameters.dropout1_2
         self.dropout_2 = parameters.dropout2
-        self.epoch_size = parameters.dropout2
-        self.window_size = parameters.window_size
         self.eeg_channels = 6
         self.emg_channels = 3
         

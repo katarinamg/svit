@@ -58,7 +58,7 @@ class EEGTransformer(nn.Module):
                  heads: int = 12):
         super().__init__()
         num_channels = int(config.n_channels)
-        num_timesteps = int(config.window_size)
+        num_timesteps = int(config.epoch_size)
         scale = width ** -0.5
         self.ln_input = nn.LayerNorm(num_channels * num_frequencies)
         self.in_proj = nn.Parameter(
