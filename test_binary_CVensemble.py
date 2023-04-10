@@ -47,14 +47,14 @@ def main():
         "-model", 
         help = "Define model.", 
         type = str,
-        default = 'simpleCNN',
+        default = 'transformer',
 
         )
     parser.add_argument(
-        "-epoch_size", 
+        "-window_size", 
         help = "Specify length of epoch (s).", 
         type = int,
-        default = 30*5,
+        default = 1500,
         
         )
     parser.add_argument(
@@ -103,7 +103,7 @@ def main():
     subset = args.subset
     
     config = spect_config(args) 
-    batch_size = 64
+    batch_size = 1
     test_ds = Spect_Dataset(config, 'test', overlap=False, n = -1, subset=subset)
     test_dl = DataLoader(test_ds, shuffle=False, batch_size=batch_size, num_workers=8)
     
